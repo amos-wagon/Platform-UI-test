@@ -3,6 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import '@aspentech/pf-ui-designsystem/dist/main.css';
+
+import '@shoelace-style/shoelace/dist/themes/light.css';
+import '@shoelace-style/shoelace/dist/themes/dark.css';
+import '@shoelace-style/shoelace/dist/components/button/button.js';
+
+import { setBasePath } from '@shoelace-style/shoelace';
+import { registerIconLibrary } from '@shoelace-style/shoelace/dist/utilities/icon-library.js';
+
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

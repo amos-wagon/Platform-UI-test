@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@aspentech/pf-ui-designsystem": "^0.0.41",
+    "@material-design-icons/font": "^0.14.15",
+    "@material-design-icons/svg": "^0.14.15"
+  }
+}
