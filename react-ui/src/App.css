@@ -1,65 +1,33 @@
-
-.creative-homepage {
+.App {
   text-align: center;
-  background: linear-gradient(135deg, #f8ffae 0%, #43c6ac 100%);
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.App-header {
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: #111827;
 }
 
-.creative-header {
-  background: rgba(255,255,255,0.85);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(67,198,172,0.2);
-  padding: 48px 32px;
-  margin-top: 40px;
+.user-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 10px;
+  width: min(360px, 90vw);
+  text-align: left;
 }
 
-.rainbow-text {
-  font-size: 3rem;
-  font-weight: bold;
-  background: linear-gradient(90deg, #ff6a00, #ee0979, #43c6ac, #f8ffae);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-  margin-bottom: 16px;
-  animation: rainbow-move 2s linear infinite alternate;
+.user-form input,
+.user-form button {
+  padding: 10px;
+  font-size: 16px;
 }
 
-@keyframes rainbow-move {
-  0% { letter-spacing: 2px; }
-  100% { letter-spacing: 8px; }
-}
-
-.subtitle {
-  font-size: 1.25rem;
-  color: #43c6ac;
-  margin-bottom: 32px;
-}
-
-.animated-circle {
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle, #43c6ac 60%, #f8ffae 100%);
-  border-radius: 50%;
-  margin: 24px auto;
-  box-shadow: 0 0 32px #43c6ac55;
-  animation: bounce 1.5s infinite alternate;
-}
-
-@keyframes bounce {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-30px); }
-}
-
-.creative-footer {
-  margin-top: 32px;
-  font-size: 1rem;
-  color: #ee0979;
+.user-form button {
+  cursor: pointer;
 }

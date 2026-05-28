@@ -18,6 +18,9 @@
 .env.test.local
 .env.production.local
 
+# npmrc with authentication tokens
+.npmrc
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

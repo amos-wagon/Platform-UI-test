@@ -1,0 +1,39 @@
+name: Sync Figma Tokens
+on:
+  workflow_dispatch: # Allows manual trigger
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight
+
+jobs:
+  sync-tokens:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install style-dictionary token-transformer
+
+      - name: Fetch Tokens from Figma
+        # You can use a community action or a custom node script here
+        run: |
+          node ./scripts/fetch-figma-tokens.js 
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
+          FIGMA_FILE_KEY: ${{ secrets.FIGMA_FILE_KEY }}
+
+      - name: Transform and Build
+        run: npx style-dictionary build
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "Design System Bot"
+          git config --global user.email "bot@yourcompany.com"
+          git add .
+          git commit -m "chore: sync design tokens from Figma" || echo "No changes to commit"
+          git push
